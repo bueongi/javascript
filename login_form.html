@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Login</title>
+   <script src="./js/jquery-3.5.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+   <script>
+      $(function(){
+         var userId = $('#user_id');
+         var userPass = $('#user_pass');
+         var saveChk = $('#id_pass_save');
+         var loginBtn = $('#login_btn');
+         var cancelBtn = $('#cancel_btn');
+
+         //reset
+         cancelBtn.on('click',function(){
+            userId.val('');
+            userPass.val('');
+            saveChk.prop('checked',false);
+         });
+
+         loginBtn.on('click',function(){
+            if(saveChk.is(':checked')){
+               $.cookie('saveId', userId.val(), { expires: 365, path: '/' });
+               $.cookie('savePass', userPass.val(), { expires: 365, path: '/' });
+            }
+            location.reload();
+         });
+         userId.val($.cookie('saveId'));
+         userPass.val($.cookie('savePass'));
+      });
+   </script>
+   <style>
+      label{display:block;margin:20px;}
+   </style>
+</head>
+<body>
+   <div class="wrap">
+      <div class="login_container">
+         <h1>로그인</h1>
+         <form action="#">
+            <label>
+               아이디
+               <input type="text" name="user_id" id="user_id">
+            </label>
+            <label>
+               패스워드
+               <input type="password" name="user_pass" id="user_pass">
+            </label>
+            <label>
+               아이디/패스워드 저장
+               <input type="checkbox" name="id_pass_save" id="id_pass_save">
+            </label>
+            <input type="button" value="로그인" id="login_btn">
+            <input type="button" value="취소" id="cancel_btn">
+         </form>
+      </div>
+   </div>
+</body>
+</html>
