@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>구구단</title>
+   <style>
+      .ndan{
+         margin:10px;
+         padding:10px;
+         border:1px solid #000;
+         display:inline-block;
+      }
+   </style>
+</head>
+<body>
+</body>
+<script>
+   document.write('<h1>구구단(2단)</h1>');
+   for(var dan=2; dan<=19; dan++){
+      document.write('<div class="ndan">');
+      document.write('<h2>' + dan + '단</h2>');
+      for(var cnt=1; cnt<=9; cnt++){ 
+         document.write(dan + '*' + cnt + '=' + dan*cnt + '<br>');
+      }
+      document.write('</div>');
+   }
+</script>
+</html>

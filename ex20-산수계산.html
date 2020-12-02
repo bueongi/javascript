@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>계산</title>
+   <style>
+      body{
+         display:grid;
+      }
+      label{margin:0 auto;}
+      input{width:300px;margin:0 auto;padding:10px 20px;}
+      input[type="button"]{
+      }
+      
+   </style>
+</head>
+<body>
+   <label for="data1">1</label>
+   <input type="text" id="data1">
+   <br>
+   <label for="data2">2</label>
+   <input type="text" id="data2">
+   <br>
+   <input type="button" value="+" onclick="fnCalc(this);">
+   <input type="button" value="-" onclick="fnCalc(this);">
+   <input type="button" value="*" onclick="fnCalc(this);">
+   <input type="button" value="/" onclick="fnCalc(this);">
+   <br>
+   <label for="result">result</label>
+   <input type="text" id="result">
+</body>
+<script>
+   //입력
+   function fnCalc(self){//매개변수
+      var val01 = document.querySelector('#data1').value;
+      var val02 = document.querySelector('#data2').value;
+      val2(self,val01,val02);
+      }
+
+      //처리
+      function val2(num1,num2,num3){
+         if(num1.value=='+'){
+         var val03 = Number(num2) + Number(num3);
+         }else if(num1.value=='-'){
+            var val03 = Number(num2) - Number(num3);
+         }else if(num1.value=='*'){
+            var val03 = Number(num2) * Number(num3);
+         }else{
+            var val03 = Number(num2) / Number(num3);
+         }
+         valOut(val03);
+      }
+
+      //출력
+      function valOut(outData){
+         document.getElementById('result').value = outData;
+      }
+
+   // function fnCalc(self){
+   //    var val01 = document.querySelector('#data1').value;
+   //    var val02 = document.querySelector('#data2').value;
+
+   //    if(self.value=='+'){
+   //    var val03 = Number(val01) + Number(val02);
+   //    }else if(self.value=='-'){
+   //       var val03 = Number(val01) - Number(val02);
+   //    }else if(self.value=='*'){
+   //       var val03 = Number(val01) * Number(val02);
+   //    }else{
+   //       var val03 = Number(val01) / Number(val02);
+   //    }
+
+   //    document.querySelector('#result').value = val03;
+   // }
+
+   // 덧셈함수
+   // function fnAdd(){
+   //    var val01 = document.querySelector('#data1').value;
+   //    var val02 = document.querySelector('#data2').value;
+   //    var val03 = Number(val01) + Number(val02);
+   //    document.querySelector('#result').value = val03;
+   // }
+   // // 뺄셈함수
+   // function fnSub(){
+   //    var val01 = document.querySelector('#data1').value;
+   //    var val02 = document.querySelector('#data2').value;
+   //    var val03 = Number(val01) - Number(val02);
+   //    document.querySelector('#result').value = val03;
+   // }
+   // //곱셈함수
+   // function fnMul(){
+   //    var val01 = document.querySelector('#data1').value;
+   //    var val02 = document.querySelector('#data2').value;
+   //    var val03 = Number(val01) * Number(val02);
+   //    document.querySelector('#result').value = val03;
+   // }
+   // //나눗셈 함수
+   // function fnDiv(){
+   //    var val01 = document.querySelector('#data1').value;
+   //    var val02 = document.querySelector('#data2').value;
+   //    var val03 = Number(val01) / Number(val02);
+   //    document.querySelector('#result').value = val03;
+   // }
+
+</script>
+</html>

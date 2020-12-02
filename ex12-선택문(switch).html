@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택문(switch)</title>
+</head>
+<body>
+    <input type="button" value="나이계산" onclick="calcAge();">
+</body>
+<script>
+    function calcAge(){
+        var inAge = Number(prompt('나이?'));
+        console.log(inAge);
+        var outAge;
+
+        switch(inAge){
+            case (inAge<=9) : 
+                outAge='어린이'
+                break;
+            case (inAge<=19) : 
+                outAge='청소년'
+                break;
+            case (inAge<=39) : 
+                outAge='청년'
+                break;
+            case (inAge<=60) : 
+                outAge='중년'
+                break;
+            case (inAge>=61) : 
+                outAge='노인'
+                break;
+        }
+
+        alert(outAge);
+    }
+</script>
+</html>

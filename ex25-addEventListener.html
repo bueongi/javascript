@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>mouse event</title>
+   <style>
+      h1{text-align:center;}
+      .img_box{
+         width:600px;
+         margin:0 auto;
+         position:relative;
+      }
+      img{
+         width:100%;
+      }
+      .img_txt{
+         position:absolute;
+         left:0;
+         bottom:0;
+         width:100%;
+         height:0%;
+         overflow:hidden;
+         background:rgba(255,0,0,.2);
+         transition:.3s;
+      }
+      /* .img_box:hover>.img_txt{
+         height:100%;
+      } */
+      .img_txt>p{
+         font-size:2rem;
+      }
+   </style>
+</head>
+<body>
+   <h1>마우스 이벤트</h1>
+   <div class="img_box">  <!-- ondblclick:더블클릭 / onmousedown:마우스 눌렀을 때 /onclick:마우스 눌렀다 떼었을 때-->
+      <img src="./images 복사본/menu-bg.jpg" alt="이미지">
+      <div class="img_txt">
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, harum iste? Repellendus quibusdam error soluta enim ratione! Nemo eos temporibus excepturi ea ullam, omnis dicta facilis fugiat aspernatur quia natus.
+         </p>
+      </div>
+   </div>
+</body>
+<script>
+   document.querySelector('.img_box').addEventListener('mouseover',imgTxtShow);
+   document.querySelector('.img_box').addEventListener('mouseout',imgTxtHide); //addEventListener는 코드를 익명함수 형태로 넣어줘야 함
+   
+   function imgTxtShow(){
+      document.querySelector('.img_txt').style.height='100%';
+   }
+   function imgTxtHide(){
+      document.querySelector('.img_txt').style.height='0%';
+   }
+</script>
+</html>

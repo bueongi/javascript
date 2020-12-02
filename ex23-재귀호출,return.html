@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>반복호출(재귀함수)</title>
+</head>
+<body>
+   <input type="button" value="실행" onclick="tmp();">
+</body>
+<script>
+   // tmp(1);
+   // tmp(2);
+   // tmp(3);
+   // tmp(4);
+   // tmp(5);
+   // tmp(6);
+   // function tmp(cnt){
+   //    console.log('호출' + cnt);
+   // }
+
+//while문
+   // var i = 1;
+   // while(i<=6){
+   //    tmp(i);
+   //    i++;
+   // }
+   // function tmp(cnt){
+   //    console.log('호출' + cnt);
+   // }
+
+//for문
+   // for(i = 1; i<=6; i++){
+   //    tmp(i);
+   // }
+   // function tmp(cnt){
+   //    console.log('호출' + cnt);
+   // }
+
+   //재귀함수
+   var cnt = 1;
+   function tmp(){
+      console.log('호출' + cnt);
+      cnt++;
+      if(cnt>6){
+         return;
+      }
+      //재귀호출
+      tmp();
+   }
+   
+</script>
+</html>

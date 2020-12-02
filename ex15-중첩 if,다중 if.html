@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   
+</body>
+<script>
+   var gender = confirm('당신은 여자입니까?');
+   var marry = confirm('당신은 기혼입니까?');
+   var wedding;
+   // if(gender){
+   //    // 여자
+   //    if(marry){
+   //       // 여자이면서 기혼자 
+   //       wedding='기혼여자';
+   //    }else{
+   //       // 여자이면서 미혼자 
+   //       wedding='미혼여자';
+   //    }
+   // }else{
+   //    // 남자
+   //    if(marry){
+   //       // 남자이면서 기혼자 
+   //       wedding='기혼남자';
+   //    }else{
+   //       // 남자이면서 미혼자 
+   //       wedding='미혼남자';
+   //    }
+   // } 중첩 if문
+
+
+   if(gender==true && marry==true){
+      wedding='기혼여자';
+   }else if(gender==true && marry==false){
+      wedding='미혼여자';
+   }else if(gender==false && marry==true){
+      wedding='기혼남자';
+   }else{
+      wedding='미혼남자';
+   }//다중 if문
+   document.write(wedding);
+</script>
+</html>

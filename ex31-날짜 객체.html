@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>내장객체(built in object)</title>
+</head>
+<body>
+   
+</body>
+<script>
+   // document.write('<h1>오늘 날짜 정보</h1>');
+   // var now = new Date();
+   // document.write(now + '<br>');
+   // var nowYear = now.getFullYear();
+   // document.write(nowYear + '<br>');
+   // var nowMonth = now.getMonth();
+   // document.write(nowMonth + '<br>');
+   // var nowDate = now.getDate();
+   // document.write(nowDate  + '<br>');
+   // var nowDay = now.getDay();
+   // document.write(nowDay + '<br>');
+   // var nowHours = now.getHours();
+   // document.write(nowHours + '<br>');
+   // var nowMinutes = now.getMinutes();
+   // document.write(nowMinutes + '<br>');
+   // var nowSeconds = now.getSeconds();
+   // document.write(nowSeconds + '<br><br><br><br><br>');
+
+   
+   
+
+   var today = new Date();//연도,월,일,시,분,초,밀리초
+   document.write(today + '<br><br><br>');
+   
+   // 사용자 정의 객체 이용
+   var koNow={
+      koYear:today.getFullYear() + '년 ',
+      koMonth:today.getMonth() + 1 + '월 ',
+      koDate:today.getDate() + '일 ',
+      koDay:function(){
+         if(today.getDay()==0){
+            return '일요일';
+         }else if(today.getDay()==1){
+            return '월요일';
+         }
+         else if(today.getDay()==2){
+            return '화요일';
+         }else if(today.getDay()==3){
+            return '수요일';
+         }else if(today.getDay()==4){
+            return '목요일';
+         }else if(today.getDay()==5){
+            return '금요일';
+         }else{
+            return '토요일';
+         }
+      }
+      
+   }
+   document.write(koNow.koYear + koNow.koMonth + koNow.koDate + koNow.koDay() + '<br><br>');
+   
+   today.setFullYear(2002);
+   document.write(today);
+
+   // var todayYear = today.getFullYear();
+   // document.write(todayYear + '년 ');
+   // var todayMonth = today.getMonth();
+   // document.write(todayMonth + 1 + '월 ');
+   // var todayDate = today.getDate();
+   // document.write(todayDate + '일 ');
+   // var todayDay = today.getDay();
+   // document.write(todayDay + 1 + '요일');
+</script>
+</html>

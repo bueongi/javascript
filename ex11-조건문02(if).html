@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var inAge = prompt('나이?');
+    var outAge;
+    if(inAge==null || inAge==''){
+        outAge='반드시 나이를 입력하세요.';
+    }else if(inAge<=9){
+        outAge='어린이';
+    }else if(inAge<=19){
+        outAge='청소년';
+    }else if(inAge<=39){
+        outAge='청년';
+    }else if(inAge<=60){
+        outAge='중년';
+    }else if(inAge>=61){
+        outAge='노인';
+    }else{
+        outAge='나이는 숫자만 혀락됩니다.';
+    }
+
+    alert(outAge);
+</script>
+</html>

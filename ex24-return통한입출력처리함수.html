@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>함수리턴</title>
+</head>
+<body>
+   <input type="button" value="링크해제">
+   <a href="http://www.naver.com" target="_blank">네이버로 이동</a>
+      <!-- 둘 중 하나만 실행 됨 지금은 onclick"noLink();" 함수가 실행 안 됨 -->
+      <!-- 하지만 onclick""속성을 이벤트 속성으로 바꾸면 onclick="return false;"이 먼저 실행 됨 따라서 링크 동작 하지 앟음 -->
+</body>
+<script>
+   //입력,출력함수
+   function inputOutput(){
+      //입력함수
+      var data1=prompt('1번째 숫자입력');
+      var data2=prompt('2번째 숫자입력');
+      
+      //처리함수 호출
+      var tmp = process(data1,data2);
+      // 이곳으로 return됨 따라서 process함수의 결과가 result가 됨.
+
+      //출력 모듈
+      console.log(tmp);
+   }
+   // 처리함수
+   function process(i,j){
+      var result = i + j;
+      return result;
+   }
+
+   // function noLink(){
+   //    console.log('1');
+   //    return false; //링크 해제할 때 사용
+   // }
+</script>
+</html>

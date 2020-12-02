@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>함수의 변수(전역/지역)</title>
+</head>
+<body>
+   <input id="run" type="button" value="동작" onclick="fnPlay();">
+   <!-- <div class="run1">실행</div>
+   <div class="run1">실행</div>
+   <div class="run1">실행</div> -->
+</body>
+<script>
+   // //전역변수(모든 함쉐 영향을 줌)
+   var i=10;
+
+   //입력함수
+   function fnPlay(){
+      //지역변수(변수 선언 된 해당 함수 내에서만 동작됨)
+      var i=10;
+      var j=2;
+      fnPlay2(i,j);
+   }
+   //처리함수
+   function fnPlay2(data1,data2){//fnPlay2의 i,j와 fnPlay i,j는 별개의 변수(같은 변수 X)왜냐면 fnPlay2에서는 i, j를 선언한 적이 없기 때문에
+      var k = data1 + data2;     //따라서 매개 변수 이름을 달리 해주는 게 좋다.
+      fnOut(k);
+   }
+
+   //출력함수
+   function fnOut(info){
+      console.log(info);
+   }
+
+   // var tmp = document.getElementById('run').value;
+   // document.getElementById('run').value = tmp; //id 중복 불가
+</script>
+</html>
